@@ -1,0 +1,9 @@
+on property:ro.boot.product.region=India
+    setprop ro.product.model "Redmi Y1 Lite"
+
+on property:ro.boot.product.region=International
+    setprop ro.product.model "Redmi Note 5A"
+
+on property:ro.boot.product.region=China
+    setprop ro.product.model "Redmi Note 5A"
+

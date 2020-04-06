@@ -14,7 +14,9 @@
 # limitations under the License.
 #
 
-LOCAL_PATH := device/xiaomi/rolex
+LOCAL_PATH := device/xiaomi/ugglite
+
+TARGET_USES_64_BIT_BINDER := true
 
 # Architecture
 TARGET_ARCH := arm64
@@ -77,7 +79,12 @@ TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/recovery/root/etc/twrp.fstab
 BOARD_SUPPRESS_SECURE_ERASE := true
 RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
-TW_USE_TOOLBOX := true
+#TW_USE_TOOLBOX := true
+TW_USE_BUSYBOX := true
+
+# Treble
+BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
+TARGET_COPY_OUT_VENDOR := vendor
 
 # Disable Mouse Cursor
 TW_INPUT_BLACKLIST := "hbtp_vm"
