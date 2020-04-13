@@ -35,14 +35,18 @@ jobs:
            lunch omni_${DEVICE}-eng
            make recoveryimage
            ls -lh $(pwd)/out/target/product/${DEVICE}/
-           export BUILDFILE_IMG=$(find $(pwd)/out/target/product/${DEVICE}/*.img 2>/dev/null)
+           export OUT_FILE_IMG=out/target/product/${DEVICE}/twrp-3.3.1-ugglite-$(date "+%H%M%d")-$(date "+%H%M").img
+           mv out/target/product/ugglite/recovery.img ${OUT_FILE_IMG}
+           export BUILDFILE_IMG=$(find $(pwd)/out/target/product/${DEVICE}/recovery.img 2>/dev/null)
            export UPLOAD_PATH=$(pwd)/out/target/product/${DEVICE}/upload/
-           echo $BUILDFILE_IMG
+           echo ${OUT_FILE_IMG}
            echo $UPLOAD_PATH
            mkdir ${UPLOAD_PATH}
-           cp $BUILDFILE_IMG $UPLOAD_PATH
-           if [ -f $BUILDFILE_IMG ]; then
-             export product_filename=$BUILDFILE_IMG
+           cp ${OUT_FILE_IMG} $UPLOAD_PATH
+           ls $UPLOAD_PATH
+           
+           if [ -f ${OUT_FILE_IMG} ]; then
+             export product_filename=${OUT_FILE_IMG}
              python3 PublishBot/main.py --after
            else
              python3 PublishBot/main.py --fail
