@@ -35,7 +35,7 @@ jobs:
            lunch omni_${DEVICE}-eng
            make recoveryimage
            ls -lh $(pwd)/out/target/product/${DEVICE}/
-           export OUT_FILE_IMG=out/target/product/${DEVICE}/twrp-3.3.1-ugglite-$(date "+%H%M%d")-$(date "+%H%M").img
+           export OUT_FILE_IMG=out/target/product/${DEVICE}/twrp-3.3.1-ugglite-$(date "+%Y%m%d")-$(date "+%H%M").img
            mv out/target/product/ugglite/recovery.img ${OUT_FILE_IMG}
            export BUILDFILE_IMG=$(find $(pwd)/out/target/product/${DEVICE}/recovery.img 2>/dev/null)
            export UPLOAD_PATH=$(pwd)/out/target/product/${DEVICE}/upload/
