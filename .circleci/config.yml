@@ -52,7 +52,7 @@ jobs:
              python3 PublishBot/main.py --fail
              exit 1
            fi
-           ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "TeamWin Recovery Project $(echo $DEVICE)" -b "SHRP $(echo $VERSION)"  -c ${CIRCLE_SHA1} -delete ${VERSION} ${UPLOAD_PATH}
+           ghr -t ${GITHUB_TOKEN} -u ${CIRCLE_PROJECT_USERNAME} -r ${CIRCLE_PROJECT_REPONAME} -n "TeamWin Recovery Project $(echo $DEVICE)" -b "TWRP $(echo $VERSION)"  -c ${CIRCLE_SHA1} -delete ${VERSION} ${UPLOAD_PATH}
            output_file=$(find out/target/product/ugglite/ -name "*.img")
            
       - run:
