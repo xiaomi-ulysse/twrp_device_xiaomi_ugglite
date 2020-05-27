@@ -81,6 +81,7 @@ RECOVERY_SDCARD_ON_DATA := true
 RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_USE_TOOLBOX := true
 #TW_USE_BUSYBOX := true
+AB_OTA_UPDATER := false
 
 # Treble
 BOARD_NEEDS_VENDORIMAGE_SYMLINK := false
@@ -94,3 +95,8 @@ TW_INCLUDE_FUSE_EXFAT := true
 
 # NTFS Support
 TW_INCLUDE_FUSE_NTFS := true
+
+# Official
+BR_OFFICIAL := true
+
+
