@@ -95,7 +95,7 @@ TW_INPUT_BLACKLIST := "hbtp_vm"
 TW_INCLUDE_FUSE_EXFAT := true
 
 # NTFS Support
-TW_INCLUDE_FUSE_NTFS := true
+TW_INCLUDE_NTFS_3G := true
 
 # OrangeFox
 OF_ALLOW_DISABLE_NAVBAR := 1
